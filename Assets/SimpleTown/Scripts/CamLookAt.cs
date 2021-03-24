@@ -2,11 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FollowPlayer : MonoBehaviour
-{
-    public GameObject player;
-    private Vector3 offset = new Vector3(7, 5, 0);
-    
+public class CamLookAt : MonoBehaviour
+{   
+    public GameObject FocusPoint;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,11 +14,6 @@ public class FollowPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = player.transform.position +offset;
-    
-
+        transform.LookAt(FocusPoint.transform);
     }
 }
-
- 
-
